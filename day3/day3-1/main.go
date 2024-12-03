@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("input.in")
+	file, err := os.Open("../input.in")
 	defer file.Close()
 	if err != nil {
 		log.Fatal("Error opening input file:", err)
@@ -21,7 +21,6 @@ func main() {
 	pattern := `mul\(\d+,\d+\)`
 	re := regexp.MustCompile(pattern)
 	result := 0
-
 	for scanner.Scan() {
 		line := scanner.Text()
 		matches := re.FindAllString(line, -1)
